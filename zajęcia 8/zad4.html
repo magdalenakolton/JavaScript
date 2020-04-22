@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>javascript</title>
+<style>
+input[type=text]{
+ display: block;
+ padding: 5px;
+ margin-bottom: 10px;
+}
+label {
+ font-size: 14px;
+}
+input[type=submit]{
+ display: block;
+ width: 150px;
+ padding: 10px;
+ background-color: #669999;
+}
+#result {
+ margin-top: 10px;
+ color: red;
+}
+</style>
+</head>
+<body>
+<form>
+ <label>Podaj numer telefonu komórkowego</label>
+ <input type="text" name="phone" id="pi">
+ <input type="submit">
+</form>
+<p id="result"></p>
+<script>
+var result = document.getElementById('result');
+var form = document.querySelector('form');
+form.addEventListener('submit', function(e) {
+ e.preventDefault(); //tutaj, kiedy zostanie kliknięty submit, metoda wstrzymuje wysłanie formularza
+ checkPhoneNo(this.phone.value);
+});
+function checkPhoneNo(phoneNo){
+ var phoneRE =  /^\d{9}$/;
+ if(phoneNo.match(phoneRE)){
+ result.innerHTML = 'Numer telefonu to: ' + phoneNo;
+ document.querySelector('#pi').value = '';
+ } else {
+ result.innerHTML = 'wprowadzony numer ma niewłaściwy format';
+ document.querySelector('#pi').value = '';
+ }
+}
+</script>
+</body>
+</html> 

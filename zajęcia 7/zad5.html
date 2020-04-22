@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>javascript</title>
+
+
+<p></p>
+<script>
+var c=0
+var t;
+var timecount=0;
+
+function timedCount(){
+	document.getElementById('txt').value=1000-c;
+	c=c+1;
+	t=setTimeout("timedCount()", 1000);
+	}
+	
+	function startTimer(){
+		if(!timecount){
+			timecount=0;
+			timedCount();
+		}
+		
+	}
+	
+	function endCount(){
+		clearTimeout(t);
+		timecount=0
+		}
+
+</script>
+</head>
+<body>
+<form />
+	<input type="button" value="Start count!" onclick="startTimer()">
+	<input type="text" id="txt">
+	<input type="button" value="Stop count!" onclick="endCount()">
+</html>

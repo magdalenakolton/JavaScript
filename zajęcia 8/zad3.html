@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>js</title>
+<meta charset="utf-8">
+</head>
+<body>
+<p id="text">
+Kraczący kruk kradnie kiełbasę każdemu krukowi. Karolina kupiła królowi Karolowi komputer. Kot kopnął
+kolezankę Karolinę. Kiedyś Karina kupiła kolorowe kozaki, które kosztowały kupę kasy.
+</p>
+<p id="second">Kliknij <br></p>
+<script>
+var text = document.getElementById('text').innerHTML;
+var second = document.getElementById('second');
+second.addEventListener('click', function(){
+ var text2 = prompt("Please enter your text:");
+ this.innerHTML = correct(text, text2);
+});
+function correct(theString, text2) {
+ theString = theString.replace(/kr*a+/ig , text2); //wstaw właściwy wzorzec
+ return theString;
+}
+</script>
+</body>
+</html> 

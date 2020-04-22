@@ -1,0 +1,42 @@
+<meta charset="utf-8">
+<style>
+input[type=text], input[type=password]{
+ display: block;
+ padding: 5px;
+ margin-bottom: 10px;
+}
+label {
+ font-size: 14px;
+}
+input[type=submit]{
+ display: block;
+ width: 150px;
+ padding: 10px;
+ background-color: #669999;
+}
+</style>
+<script>
+function validateform(){
+ var name = document.myform.name.value;
+ var password = document.myform.password.value;
+ var cond1 = /^\w+$/;
+ var cond2 = /^\w{6,}$/;
+ 
+ if(name.match(cond1) && password.match(cond2)){
+	return true;
+ } else {
+	alert('Niepoprawne dane!');
+	return false;
+}
+}
+</script>
+</head>
+<body>
+<form name="myform" onsubmit="return validateform()">
+<label>Nazwa użytkownika:</label>
+<input type="text" name="name">
+<label>Hasło :</label>
+<input type="password" name="password"> 
+<input type="submit" value="zarejestruj">
+</form>
+</body> 

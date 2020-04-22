@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>javascript</title>
+</head>
+<body>
+<p></p>
+<script>
+
+var cats = ['Łatek', 'Puchatek', 'Jaśmin'];
+var info = 'Moje koty mają imiona: ';
+var para = document.querySelector('p');
+for(var i = 0; i<cats.length; i++){
+		info+= cats[i] + ', ';
+		}
+		
+para.textContent = info;
+
+</script>
+
+</body>
+</html>

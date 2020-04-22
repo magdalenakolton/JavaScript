@@ -1,0 +1,21 @@
+<html>
+<head>
+</head>
+<body>
+    <div id="static" style = 'font-size : 200%'> Pierwszy element strony.</div>
+
+
+ <script>
+			var div = document.getElementById("static");
+			var first = document.createElement('p');
+			first.textContent = 'Pierwszy!';
+			
+			var second = document.createElement('p');
+			second.textContent = 'Drugi!';
+			
+			div.appendChild(first);
+            div.insertBefore(second, first);
+		
+    </script>
+</body>
+</html>

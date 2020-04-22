@@ -1,0 +1,22 @@
+<html>
+<head>
+<meta charset="utf-8">
+<script>
+		function changeColors (elmnt, clr, size)
+		{
+		elmnt.style.color=clr;
+		elmnt.style.fontSize=size;
+		}
+</script>
+</head>
+<body>
+
+<p onMouseDown="changeColors(this, 'red', '24pt')" onMouseUp="changeColors(this, 'green', '18pt')">
+Naciśnij i przytrzymaj klawisz myszy. A następnie zwolnij klawisz myszy.<br>
+Funkcja, którą napiszemy zmieni kolor tekstu najpierw na czerwony, a
+następnie na zielony.<br>
+Funkcja zmieni także rozmiar tekstu, najpierw na 24pt, a po zwolnieniu myszy na 18pt.
+</p>
+
+</body>
+</html>

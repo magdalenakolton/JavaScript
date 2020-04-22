@@ -1,0 +1,42 @@
+<meta charset="utf-8">
+<style>
+input[type=text], input[type=password]{
+ display: block;
+ padding: 5px;
+ margin-bottom: 10px;
+}
+label {
+ font-size: 14px;
+}
+input[type=submit]{
+ display: block;
+ width: 150px;
+ padding: 10px;
+ background-color: #669999;
+}
+</style>
+<script>
+
+function validateform(){
+ var password = document.myform.password.value;
+ var password2 = document.myform.password2.value;
+
+ if(document.myform.password.value!=document.myform.password2.value){
+	alert('Hasła się nie zgadzają'); 
+	return false;
+} else { 
+	return true; 
+	}
+}
+
+</script>
+</head>
+<body>
+<form name="myform" onsubmit="return validateform()">
+<label>Hasło :</label>
+<input type="password" name="password"> 
+<label>Powtórz hasło :</label>
+<input type="password" name="password2"> 
+<input type="submit" value="zarejestruj">
+</form>
+</body> 

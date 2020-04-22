@@ -1,0 +1,65 @@
+<meta charset="utf-8">
+<style>
+input[type=text], input[type=password]{
+ display: block;
+ padding: 5px;
+ margin-bottom: 10px;
+}
+label {
+ font-size: 14px;
+}
+input[type=submit]{
+ display: block;
+ width: 150px;
+ padding: 10px;
+ background-color: #669999;
+}
+
+</style>
+<script>
+
+function validateform(){
+ var result = document.getElementById('result');
+
+ var name = document.myform.name.value;
+ var surname = document.myform.surname.value;
+ var mail = document.myform.mail.value;
+
+ var cond = /^[0-9a-z_.-]+@[0-9a-z.-]+\.[a-z]{2,3}$\i/;
+ 
+	if(name.length==0){
+	result.innerHTML = 'Niepoprawne imie! ';
+	document.getElementById('name').focus();
+	document.querySelector('#pi').value = '';
+	}else
+	if(surname.length==0){
+	result.innerHTML = 'Niepoprawne nazwisko! ';
+	document.getElementById('surname').focus();
+	document.querySelector('#pi').value = '';
+		}
+	else if(mail.search(cond) == -1){
+	result.innerHTML = 'Niepoprawny email!' ;
+	document.getElementById('email').focus();
+	document.querySelector('#pi').value = '';
+	}
+	else {
+	result.innerHTML = 'Zarejestrowano! ';	
+	document.querySelector('#pi').value = '';
+ } 
+}
+	
+</script>
+</head>
+<body>
+<form name="myform" onsubmit="return validateform()">
+<label>Imię: </label>
+<input type="text" name="name" id = "name">
+<label>Nazwisko: </label>
+<input type="text" name="surname" id = "surname">
+<label>Email: </label>
+<input type="text" name="mail" id = "mail"> 
+<input type="submit" value="zarejestruj">
+</form>
+<p id="result"></p>
+</body> 
+</html>
