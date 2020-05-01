@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+</head>
+<body>
+<ul>
+  <li>Pierwszy</li>
+  <li>Drugi</li>
+  <li>Trzeci</li>
+  <li>Czwarty</li>
+  </ul>
+</div>
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+ 
+<script>
+$(document).ready(function(){
+var newElement = $('<p>Nowy element</p>');
+var newElement2 = $('<p>Nowy element</p>');
+newElement.insertBefore('li:first') ;
+newElement2.insertAfter('li:last');
+});
+
+ </script>
+
+</html>
