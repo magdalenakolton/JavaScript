@@ -1,0 +1,72 @@
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="jquery.easing.1.3.js"></script>
+<style>
+.menu {
+list-style-type: none;
+margin: 100px 0 0;
+}
+.menu li {
+padding: 0;
+margin: 0 2px;
+float: left;
+position: relative;
+text-align: center;
+}
+.menu a {
+padding: 14px 10px;
+display: block;
+width: 144px;
+text-decoration: none;
+color: #000;
+background: linear-gradient(#cceeff, #66ccff);
+}
+.menu li em {
+width: 140px;
+height: 100px;
+background-color: #ffff66;
+position: relative;
+border-radius: 12px;
+padding: 20px 12px 10px;
+top: -85px;
+z-index: 2;
+display: none;
+}
+.menu li em:before {
+content: '';
+width: 0;
+height: 0;
+top: 100%;
+position: absolute;
+border-top: 26px solid #ffff66;
+border-left: 13px solid transparent;
+border-right: 13px solid transparent;
+}
+</style>
+<script>
+$(document).ready(function(){
+$('.menu a').hover(
+function(){
+$(this).next('em').stop().animate({opacity: 'show'}, 'slow');
+}, function(){
+$(this).next('em').stop().animate({opacity: 'hide'}, 'fast');
+}
+);
+});
+
+</script>
+<body>
+<ul class="menu">
+<li>
+<a href="#">Menu A</a>
+<em>Link do strony A</em>
+</li>
+<li>
+<a href="#">Menu B</a>
+<em>Link do strony B</em>
+</li>
+<li>
+<a href="#">Menu C</a>
+<em>Link do strony C</em>
+</li>
+</ul>
+</body>

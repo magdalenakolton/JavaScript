@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+</head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+  $("#Animacja").click(function(){
+    $("div").animate({
+left: "+=50",
+top: "+=50",
+width: "+=50",
+height: "+=50"
+});
+  });
+});
+
+$(document).ready(function(){
+  $("#Reset").click(function(){
+    $("div").animate({
+left: "100",
+top: "60",
+width: "100",
+height: "100"
+});
+  });
+});
+</script>
+<style>
+
+div {
+width: 100px;
+height: 100px;
+background-color: lightblue;
+border: 1px solid #000;
+position: relative; /*wymagane, żeby móc przesunąć element*/
+
+}
+</style>
+</head>
+<body>
+<button id="Animacja">Animacja</button>
+<button id="Reset">Reset</button>
+<div></div>
+</body>
+</html>
