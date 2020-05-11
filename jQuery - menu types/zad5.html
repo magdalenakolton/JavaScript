@@ -1,0 +1,27 @@
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<link rel="stylesheet" type="text/css" href="zad5.css">
+<body>
+<ul id="nav">
+ <li><a href="#">Patent 01</a></li>
+ <li><a href="#" class="selected">Patent 01</a>
+ <ul class="ab">
+ <li><a href="#">Item 01</a></li>
+ <li><a href="#">Item 02</a></li>
+ </ul> 
+<div class="clear"></div>
+ </li>
+ <li><a href="#">Patent 03</a></li>
+</ul>
+</body> 
+<script>
+$(document).ready(function(){
+ $('#nav li').hover(
+ function(){
+ $('ul', this).stop().slideDown(100);
+ },
+ function(){
+ $('ul', this).stop().slideUp(100);
+ }
+ );
+});
+</script> 

@@ -1,0 +1,14 @@
+.pullquote {
+float: right;
+clear: right;
+width: 200px;
+border: 1px solid black;
+padding: 10px;
+font-size: 16px;
+text-align: left;
+background-color: #EBC633;
+margin: 20px 0 10px 10px;
+font-style: italic;
+
+color: #FFF;
+}

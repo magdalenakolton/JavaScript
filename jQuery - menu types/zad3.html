@@ -1,0 +1,48 @@
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<link rel="stylesheet" type="text/css" href="zad3.css">
+<body>
+<div class="wrapper">
+
+ <div id="panel">
+ <img src="img/blue.jpg" width="70" alt="blue">
+ <img src="img/ob1.jpg" width="70" alt="blue">
+ <img src="img/blue.jpg" width="70" alt="blue">
+ <img src="img/ob1.jpg" width="70" alt="blue">
+ <img src="img/blue.jpg" width="70" alt="blue">
+ </div>
+ <div id="main">
+ <h1>Wysuwany pasek ze zdjęciami</h1>
+ <p>Umieść wskaźnik myszy na niebieskim pasku widocznym wzdłuż lewej krawędzi strony.</p>
+ </div>
+
+</div>
+</body> 
+<script>
+$(document).ready(function() {
+ $('#panel').hover(
+ function(){
+ $(this).stop().animate(
+ {
+ left: '0',
+ backgroundColor: 'rgb(153, 204, 255)',
+
+ },
+ 500, //czas trwania animacji 
+'easeInSine' //tempo animacji, zaczyna się wolno, następnie
+przyspiesza
+ ); //koniec animate
+ },
+ function() {
+ $(this).stop().animate(
+ {
+ left: '-92px',
+ backgroundColor: 'rgb(110, 138, 195)'
+ },
+ 1500, //czas trwania animacji
+ 'easeOutBounce'
+ ); //koniec animate
+ }
+ ); //koniec f. hover
+}); // koniec funkcji ready
+</script> 

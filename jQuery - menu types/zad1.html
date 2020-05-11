@@ -1,0 +1,33 @@
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<link rel="stylesheet" type="text/css" href="zad1.css">
+</head>
+<body>
+<h1>Wyróżniane cytaty</h1>
+<h2>Vestibulum semper</h2>
+<p>Vestibulum semper tincidunt sem. Vestibulum ante ipsum primis in faucibus orci luctus et
+ultrices posuere cubilia Curae; Donec pulvinar, justo non fringilla dapibus, sapien tortor cursus
+erat, at posuere magna nisi tincidunt sapien. Sed nisl. Fusce venenatis, libero porta porta fringilla,
+sapien odio tincidunt sem, id aliquam tellus sapien sit amet quam. Vivamus justo mi, aliquam
+vitae, eleifend et, lobortis quis, eros. Ut felis arcu, mollis ut, interdum molestie, vehicula a, sapien.
+Sed nisi nunc, bibendum vel, adipiscing sed, placerat quis, augue. <span class="pq">Nullam ut
+nibh sed orci tempor rutrum.</span> Sed iaculis. Suspendisse potenti. Donec semper molestie
+felis. Sed vitae diam. Curabitur sed velit convallis orci luctus viverra. Quisque et quam non tortor
+ultrices rutrum. Nulla porttitor mauris sed nunc. Donec lectus. Cum sociis natoque penatibus et
+magnis dis parturient montes, nascetur ridiculus mus. Cras quis massa. Sed mattis erat vitae
+nisi.</p>
+
+<script>
+$(document).ready(function(){
+//pobiera wszystkie znaczniki span należące do klasy pq
+//each() jest funkcją pozwalającą przejrzeć kolekcję wybranych elementów strony; wymaga
+//ona przekazania jednego argumentu: funkcji anonimowej
+$('span.pq').each(function(){
+var quote=$(this).clone(); //tworzy kopię przetwarzanego elementu
+quote.removeClass('pq'); //usuwamy klasę ze znacznika
+quote.addClass('pullquote');
+$(this).before(quote); //dodajemy kopię przed oryginalnym elementem
+});//koniec funkcji each
+});//koniec funkcji ready
+</script>
+</body>

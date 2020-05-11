@@ -1,0 +1,45 @@
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<style>
+ table {
+ border-collapse: collapse;
+ border: 2px solid black;
+ width: 100px;
+ }
+
+ td {
+ border: 1px solid black;
+ padding-left: 10px;
+ }
+
+ th {
+ border: 1px solid black;
+ }
+
+</style>
+</head>
+<body>
+<h1>Imiona</h1>
+<div id="imiona">
+</div>
+</body> 
+<script>
+var imiona = new Array(
+ 'Jan',
+ 'Jarek',
+ 'Roman',
+ 'Witold',
+ 'Anna',
+ 'Joanna',
+ 'Izabella'
+);
+imiona.sort();
+var kodHtml = '<table><tr><th>Imie</th></tr>';
+for(imie in imiona){
+ kodHtml = kodHtml + '<tr><td>' + imiona[imie] + '</td></tr>';
+}
+kodHtml = kodHtml + '</table>';
+$(document).ready(function(){
+ $('#imiona').html(kodHtml);
+}); 
+</script>

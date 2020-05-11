@@ -1,0 +1,38 @@
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<link rel="stylesheet" type="text/css" href="zad4.css">
+<body>
+<div class="tabsPanels">
+ <ul class="tabs">
+ <li><a href="#panel1">Opis produktu</a></li>
+ <li><a href="#panel2">Dane techniczne</a></li>
+ <li><a href="#panel3">Ocena</a></li>
+ </ul>
+ <div id="panelContainer">
+ <div class="panel" id="panel1">
+ Lorem ipsum dolor sit
+ </div>
+
+ <div class="panel" id="panel2">
+ Pellentesque facilisis.
+ </div>
+
+ <div class="panel" id="panel3">
+ Nulla imperdiet sit amet magna.
+ </div>
+ </div>
+</div>
+</body> 
+<script src="jquery-1.12.2.min.js"></script>
+<script>
+$(document).ready(function() {
+ $('.tabs a').click(function(){
+ $this = $(this);
+ $('.panel').hide();
+ $('.tabs a.active').removeClass('active');
+ $this.addClass('active');
+ var panel = $this.attr('href');
+ $(panel).fadeIn(250);
+ }); // koniec click
+ $('.tabs li:first a').click();
+}); // koniec funkcji ready
+</script> 
